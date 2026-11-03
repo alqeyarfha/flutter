@@ -1,3 +1,8 @@
+import 'package:alqe_flutter/listview_widget/lisr_builder2.dart';
+import 'package:alqe_flutter/listview_widget/list_basic.dart';
+import 'package:alqe_flutter/listview_widget/list_builder_widget.dart';
+import 'package:alqe_flutter/listview_widget/list_separated.dart';
+import 'package:alqe_flutter/listview_widget/tugas_list.dart';
 import 'package:alqe_flutter/sized_box_stack_expanded_position/LatihanSatu.dart';
 import 'package:alqe_flutter/sized_box_stack_expanded_position/LayoutEmpat.dart';
 import 'package:alqe_flutter/sized_box_stack_expanded_position/LayoutSatu.dart';
@@ -21,7 +26,7 @@ class MyApp extends StatelessWidget {
           title: const Text("Belajar flutter"),
           backgroundColor: const Color.fromARGB(255, 249, 248, 250),
         ),
-        body: Latihansatu (),
+        body: TugasList(),
       ),
     );
   }
