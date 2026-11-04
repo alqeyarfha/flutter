@@ -1,3 +1,5 @@
+import 'package:alqe_flutter/gridview/grid_builder_widget.dart';
+import 'package:alqe_flutter/gridview/grid_latihan.dart';
 import 'package:alqe_flutter/listview_widget/lisr_builder2.dart';
 import 'package:alqe_flutter/listview_widget/list_basic.dart';
 import 'package:alqe_flutter/listview_widget/list_builder_widget.dart';
@@ -23,10 +25,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Belajar flutter"),
+          title: const Text("Galeri Foto"),
           backgroundColor: const Color.fromARGB(255, 249, 248, 250),
         ),
-        body: TugasList(),
+        body: GridGalerifoto(),
       ),
     );
   }
