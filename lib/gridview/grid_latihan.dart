@@ -64,118 +64,127 @@ class GridGalerifoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(12),
-      itemCount: galeriFoto.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 0.72,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Galeri Foto"),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
-      itemBuilder: (context, index) {
-        final data = galeriFoto[index];
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: GridView.builder(
+          itemCount: galeriFoto.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: 0.72,
+          ),
+          itemBuilder: (context, index) {
+            final data = galeriFoto[index];
 
-        return Card(
-          clipBehavior: Clip.antiAlias,
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      child: Image.network(
-                        data['imageUrl'],
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                    ),
-                    
-                    Positioned(
-                      top: 10,
-                      right: 10,
-                      child: CircleAvatar(
-                        radius: 16,
-                        backgroundColor: Colors.white.withOpacity(0.8),
-                        child: Icon(
-                          data['favorit']
-                              ? Icons.favorite
-                              : Icons.favorite_border,
-                          color: data['favorit'] ? Colors.red : Colors.grey,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 10,
-                      bottom: 10,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 5,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.35),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.location_on,
-                              color: Colors.white,
-                              size: 14,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              data['lokasi'],
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+            return Card(
+              clipBehavior: Clip.antiAlias,
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      data['nama'],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: Image.network(
+                            data['imageUrl'],
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                          ),
+                        ),
+                        
+                        Positioned(
+                          top: 10,
+                          right: 10,
+                          child: CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Colors.white.withOpacity(0.8),
+                            child: Icon(
+                              data['favorit']
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color: data['favorit'] ? Colors.red : Colors.grey,
+                              size: 18,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 10,
+                          bottom: 10,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 5,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.35),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  Icons.location_on,
+                                  color: Colors.white,
+                                  size: 14,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  data['lokasi'],
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 6),
-                    Text(
-                      data['deskripsi'],
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        height: 1.4,
-                        color: Colors.grey,
-                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          data['nama'],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          data['deskripsi'],
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            height: 1.4,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        );
-      },
+            );
+          },
+        ),
+      ),
     );
   }
 }
