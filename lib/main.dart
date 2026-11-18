@@ -9,7 +9,7 @@ import 'package:alqe_flutter/listview_widget/list_builder_widget.dart';
 import 'package:alqe_flutter/listview_widget/list_separated.dart';
 import 'package:alqe_flutter/listview_widget/tugas_list.dart';
 import 'package:alqe_flutter/navigation/about_page.dart';
-import 'package:alqe_flutter/navigation/contoh_nav.dart';
+import 'package:alqe_flutter/navigation/menu.dart';
 import 'package:alqe_flutter/row_column.dart/column_widget.dart';
 import 'package:alqe_flutter/row_column.dart/latihan_row_widget.dart';
 import 'package:alqe_flutter/row_column.dart/layout_widget.dart';
